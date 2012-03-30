@@ -90,4 +90,12 @@
     [_windowControllers release];
     [super dealloc];
 }
+
+
+//click dock to show window again after close
+- (BOOL)applicationShouldHandleReopen:(NSApplication *)theApplication hasVisibleWindows:(BOOL)flag
+{
+    [self.window makeKeyAndOrderFront:self];
+    return YES;
+}
 @end
